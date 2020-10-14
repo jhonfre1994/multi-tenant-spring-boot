@@ -45,19 +45,19 @@ spring.datasource.password=XXXX
 
 ## Capturas de pantalla
 
-* ejemplo para el esquema public.
+* Ejemplo para el esquema public.
 
 ![](imagenes/public.PNG)
 
-* ejemplo para el esquema esquema1.
+* Ejemplo para el esquema esquema1.
 
 ![](imagenes/esquema1.PNG)
 
-* ejemplo para el esquema esquema2.
+* Ejemplo para el esquema esquema2.
 
 ![](imagenes/esquema2.PNG)
 
-* en caso de no enviar el X-tenantID en el header de la  petición.
+* En caso de no enviar el X-tenantID en el header de la  petición.
 
 ![](imagenes/noHeader.PNG)
 
