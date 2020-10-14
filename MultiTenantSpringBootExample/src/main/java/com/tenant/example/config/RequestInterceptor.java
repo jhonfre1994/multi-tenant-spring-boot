@@ -17,7 +17,7 @@ public class RequestInterceptor extends HandlerInterceptorAdapter {
         System.out.println(" X-TenantID  :: " + tenantID);
         System.out.println("____________________________________________");
         if (tenantID == null) {
-            response.getWriter().write("X-TenantID not present in the Request Header");
+            response.getWriter().write("X-TenantID no esta presente en el Header");
             response.setStatus(400);
             return false;
         }

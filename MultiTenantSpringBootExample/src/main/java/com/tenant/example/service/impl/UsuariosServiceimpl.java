@@ -5,8 +5,10 @@ package com.tenant.example.service.impl;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import com.tenant.example.config.TenantContext;
 import com.tenant.example.dto.UsuariosDTO;
 import com.tenant.example.entity.Usuarios;
+import com.tenant.example.exceptions.responses.BadRequestException;
 import com.tenant.example.repository.UsuariosRepo;
 import com.tenant.example.service.UsuariosService;
 import java.util.ArrayList;
@@ -32,15 +34,14 @@ public class UsuariosServiceimpl implements UsuariosService {
     @Override
     public List<UsuariosDTO> getAll() {
         List<UsuariosDTO> res = new ArrayList<>();
-        List<Usuarios> usu = usuariosRepo.findAll();
-
-        if (usu != null) {
-            for (Usuarios usuarios : usu) {
+        List<Usuarios> usuariosList = usuariosRepo.findAll();
+        if (usuariosList != null && !usuariosList.isEmpty()) {
+            for (Usuarios usuarios : usuariosList) {
                 res.add(mapper.map(usuarios, UsuariosDTO.class));
             }
             return res;
         }
-        return null;
+        throw new BadRequestException("No hay usuarios en el esquema " + TenantContext.getCurrentTenant());
     }
 
     @Override
@@ -52,10 +53,9 @@ public class UsuariosServiceimpl implements UsuariosService {
     @Override
     public UsuariosDTO eliminarUsuario(Integer id) {
         Optional<Usuarios> usu = usuariosRepo.findById(id);
-
         if (usu != null) {
             usuariosRepo.deleteById(id);
         }
-        return null;
+        throw new BadRequestException("Ocurrio un error al eliminar el usuario.");
     }
 }
