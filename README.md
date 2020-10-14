@@ -41,10 +41,28 @@ spring.datasource.password=XXXX
 
 * Compile el proyecto. Automanticamente se crearan las tablas y los esquemas.
 
-* 
+* Use Postman u otro programa de su preferencia para ejecutar y probar el funcionamiento.
+
+## Capturas de pantalla
+
+* ejemplo para el esquema public.
+
+![](imagenes/public.PNG)
+
+* ejemplo para el esquema esquema1.
+
+![](imagenes/esquema1.PNG)
+
+* ejemplo para el esquema esquema2.
+
+![](imagenes/esquema2.PNG)
+
+* en caso de no enviar el X-tenantID en el header de la  petición.
+
+![](imagenes/noHeader.PNG)
 
 # Comando curl
-Use comandos curl para probar las funciones del multi-tenant, el parametro C-tenantID es el nombre
+Use comandos curl para probar las funciones del multi-tenant, el valor del header X-tenantID es el nombre
 del esquema al cual se quiere consultar la información de los usuarios.
 
 ```
