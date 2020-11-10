@@ -1,6 +1,6 @@
 # multi-tenant-spring-boot
 
-Ejemplo de implementación de multi-tentan (multi-tenancy) usando una misma base de datos pero diferentes esquemas para cada cliente.
+Ejemplo de implementación de multi-tentan (multi-tenancy) usando una misma base de datos con  diferentes esquemas para cada cliente.
 
 
 ## Construido con 🛠️
